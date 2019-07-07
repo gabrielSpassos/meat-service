@@ -23,6 +23,31 @@ curl -X GET \
   -H 'Accept: */*' 
 ```
 
+* Create User
+```
+curl -X POST \
+  http://localhost:3000/users \
+  -H 'Accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"name": "Tony Stark",
+	"email": "tony@marvel.com",
+	"password": "jarvis"
+}'
+```
+
+* Fully Update of Users
+```
+curl -X PUT \
+  http://localhost:3000/users/5d21293cfa9d3e2cb6301e28 \
+  -H 'Accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Diana Prince",
+    "email": "diana@dc.com"
+}'
+```
+
 * Partial Update of Users
 ```
 curl -X PATCH \
