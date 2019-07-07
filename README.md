@@ -59,3 +59,10 @@ curl -X PATCH \
     "name": "Peter Benjamin Parker"
    }'
 ```
+
+* Delete one User
+```
+curl -X DELETE \
+  http://localhost:3000/users/5d22444cf2b4ae3fc370b9d9 \
+  -H 'Accept: */*' \
+```
