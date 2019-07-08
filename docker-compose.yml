@@ -1,7 +1,9 @@
-version: '3.1'
+version: "2"
 services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGODB_USER: root
+      MONGODB_PASS: pass
+    ports:
+      - "27017:27017"
