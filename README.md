@@ -9,6 +9,10 @@ tsc -w
 
 ## Endpoints
 
+Import [collection]() at Postman
+
+__OR__
+
 * Get All Users
 ```
 curl -X GET \

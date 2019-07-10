@@ -6,31 +6,18 @@ class UsersRouter extends Router {
     applyRoutes(application: restify.Server) {
 
         application.get('/users', (req, resp, next) => {
-            User.find().then(users => {
-                resp.json(users);
-                return next();
-            })
+            User.find()
+                .then(this.render(resp, next));
         });
 
         application.get('/users/:id', (req, resp, next) => {
-            User.findById(req.params.id).then(user => {
-                if (user) {
-                    resp.json(user);
-                    return next();
-                }
-
-                resp.send(404);
-                return next();
-            })
+            User.findById(req.params.id)
+                .then(this.render(resp, next));
         });
 
         application.post('/users', (req, resp, next) => {
             let user = new User(req.body);
-            user.save().then(user => {
-                user.password = undefined;
-                resp.json(user);
-                return next();
-            });
+            user.save().then(this.render(resp, next));
         });
 
         application.put('/users/:id', (req, resp, next) => {
@@ -45,23 +32,13 @@ class UsersRouter extends Router {
                         return next();
                     }
                 })
-                .then(user => {
-                    resp.json(user);
-                    return next();
-                });
+                .then(this.render(resp, next));
         });
 
         application.patch('/users/:id', (req, resp, next) => {
             const  options = {new: true};
             User.findByIdAndUpdate(req.params.id, req.body, options)
-                .then(user => {
-                   if(user) {
-                       resp.json(user);
-                       return next();
-                   }
-                   resp.send(404);
-                   return next();
-                })
+                .then(this.render(resp, next));
         });
 
         application.del('/users/:id', (req, resp, next) => {
