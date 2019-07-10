@@ -9,7 +9,7 @@ tsc -w
 
 ## Endpoints
 
-Import [collection]() at Postman
+* Import [collection](https://github.com/gabrielSpassos/meat-service/blob/master/Meat-Service.postman_collection.json) at Postman
 
 __OR__
 
