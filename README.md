@@ -7,6 +7,12 @@ Based on this [course](https://www.udemy.com/nodejs-rest-pt/learn/lecture/981562
 tsc -w
 ```
 
+* Start server
+```
+nodemon dist/main.js 
+```
+
+
 ## Endpoints
 
 * Import [collection](https://github.com/gabrielSpassos/meat-service/blob/master/Meat-Service.postman_collection.json) at Postman
