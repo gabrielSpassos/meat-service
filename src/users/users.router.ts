@@ -3,6 +3,15 @@ import * as restify from 'restify'
 import {User} from './users.model'
 
 class UsersRouter extends Router {
+
+    constructor(){
+        super();
+        this.on('beforeRender', document => {
+            document.password = undefined;
+            //delete.document.password
+        })
+    }
+
     applyRoutes(application: restify.Server) {
 
         application.get('/users', (req, resp, next) => {
